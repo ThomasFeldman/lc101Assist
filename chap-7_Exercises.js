@@ -74,7 +74,7 @@ bonus = language.replace(language, language.toLowerCase().slice(6,9));
 console.log(bonus);
 
 //  Q2
-let notTitle = "title case";
-let title = (notTitle.replace("t", "T"));
-title = title.replace("c", "C");
-console.log(title);
+const input = require("readline-sync");
+let notTitle = input.question("Enter two words: ");
+let space = notTitle.indexOf(" ");
+console.log(notTitle.replace(notTitle.charAt(0), notTitle.charAt(0).toUpperCase()).replace(notTitle.charAt(space+1), notTitle.charAt(space+1).toUpperCase()));
