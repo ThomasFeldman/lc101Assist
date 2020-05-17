@@ -44,13 +44,13 @@ console.log(dna);
 dna = dna.replace("GCT", "AGG");
 console.log(dna);
 //b)
-if (dna.indexOf(CAT)){
+if (dna.indexOf("CAT") >= 0){
     console.log("CAT gene found");
 }else {
     console.log("CAT gene NOT found");
 }
-//c)
-console.log(dna.slice(15,18));
+//c) 
+console.log(dna.slice(16,19));
 //d)
 console.log(`The DNA string is ${dna.length} characters long.`);
 //e)
@@ -66,13 +66,11 @@ abbreviation = (language.slice(0,1) + language.slice(4,5));
 console.log(abbreviation); 
 //b)
 language = "JavaScript";
-abbreviation = (language.replace("JavaScript", "JS"));
-console.log(abbreviation);
+console.log(language.replace("ava", "").replace("cript", ""));
 //c)
 console.log(`The abbreviation for '${language}' is '${abbreviation}'`)
 //d)
-bonus = language.replace(language, language.toLowerCase());
-bonus = bonus.slice(6,9);
+bonus = language.replace(language, language.toLowerCase().slice(6,9));
 console.log(bonus);
 
 //  Q2
