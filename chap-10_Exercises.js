@@ -63,7 +63,7 @@ function makeDownwardStairs(height){
   
     console.log(finalArray.join(''));
   }
-  //makeSpaceLine(3,5);
+  makeSpaceLine(3,5);
   
   // Q3
   //adjusted previous function to make ' ' instead of '_'
@@ -84,6 +84,7 @@ function makeDownwardStairs(height){
     console.log(finalArray.join(''));
   }
   
+  Need to adjust to print out triangle of height x, currently not working.
   function makeIsoscelesTriangle (height) {
     let triHashes=1;
     let triSpaces=height;
