@@ -84,7 +84,7 @@ function makeDownwardStairs(height){
     console.log(finalArray.join(''));
   }
   
-  Need to adjust to print out triangle of height x, currently not working.
+  //Need to adjust to print out triangle of height x, currently not working.
   function makeIsoscelesTriangle (height) {
     let triHashes=1;
     let triSpaces=height;
