@@ -130,3 +130,32 @@ function makeDownwardStairs(height){
   makeReverseIsoscelesTriangle(3);
   
   function makeDiamonds(height){}
+
+
+
+
+
+
+
+
+
+  //Use the repeat to make this much easier.
+let b = 6;
+
+function hash(num){
+  for(i=0; i<=num; i++){
+    console.log('#'.repeat(i));
+  }
+}
+
+hash(b);
+
+let a = 6;
+
+function hashReverse(num){
+  for(i=num; i>0; i--){
+    console.log('#'.repeat(i));
+  }
+}
+
+hashReverse(a);
