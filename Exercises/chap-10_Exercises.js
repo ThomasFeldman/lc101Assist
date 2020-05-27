@@ -98,43 +98,42 @@ function makeDownwardStairs(height){
   
   // Q4
   
-  //make reverse of previous functions
-  
-  function makeReverseSpaces(numSpaces, numChars){
-    let finalArray = [];
-    let numSpaceArray = [];
-    let numCharsArray = [];
-  
-    for(i=0;i<numSpaces;i++){
-      numSpaceArray.push('');
+  function tri(height){
+    //spaces will equal num
+    let rowHeight = height
+    let hash = 1;
+    for(i=0; i<height; i++){
+      console.log(' '.repeat(rowHeight) + '#'.repeat(hash));
+      rowHeight = rowHeight-1;
+      hash += 2;
     }
-    for(i=0;i<numChars;i++){
-      numCharsArray.push('#');
+  }
+  
+  
+  function triReverse(height){
+    //spaces will equal num
+    let triRevArr = []
+    let rowHeight = height
+    let hash = 1;
+    for(i=0; i<height; i++){
+      triRevArr.push(' '.repeat(rowHeight) + '#'.repeat(hash));
+      rowHeight = rowHeight-1;
+      hash += 2;
+    }
+    triRevArr = triRevArr.reverse();
+  
+    for(i=0; i<triRevArr.length; i++){
+      console.log(triRevArr[i]);
     }
     
-    finalArray = finalArray.concat(numSpaceArray,numCharsArray,numSpaceArray);
-  
-    console.log(finalArray.join(''));
   }
   
-  
-  function makeReverseIsoscelesTriangle (height) {
-    let triHashes=1;
-    let triSpaces=height;
-    for(i=0; i<height; i++){
-      makeSpaces(triSpaces/2, triHashes)
-      triSpaces = triSpaces-2;
-      triHashes = triHashes+2;
-    }
+  function diamond(height){
+    tri(height);
+    triReverse(height);
   }
-  makeReverseIsoscelesTriangle(3);
   
-  function makeDiamonds(height){
-    hash(height);
-    hashReverse(height);
-  }
-
-
+  diamond(8);
 
 
 
@@ -143,22 +142,22 @@ function makeDownwardStairs(height){
 
 
   //Use the repeat to make this much easier.
-let b = 6;
+// let b = 6;
 
-function hash(num){
-  for(i=0; i<=num; i++){
-    console.log('#'.repeat(i));
-  }
-}
+// function hash(num){
+//   for(i=0; i<=num; i++){
+//     console.log('#'.repeat(i));
+//   }
+// }
 
-hash(b);
+// hash(b);
 
-let a = 6;
+// let a = 6;
 
-function hashReverse(num){
-  for(i=num; i>0; i--){
-    console.log('#'.repeat(i));
-  }
-}
+// function hashReverse(num){
+//   for(i=num; i>0; i--){
+//     console.log('#'.repeat(i));
+//   }
+// }
 
-hashReverse(a);
+// hashReverse(a);
