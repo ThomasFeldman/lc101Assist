@@ -129,7 +129,10 @@ function makeDownwardStairs(height){
   }
   makeReverseIsoscelesTriangle(3);
   
-  function makeDiamonds(height){}
+  function makeDiamonds(height){
+    hash(height);
+    hashReverse(height);
+  }
 
 
 
