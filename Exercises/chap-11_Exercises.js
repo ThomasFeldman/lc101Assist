@@ -26,3 +26,14 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+let anonFunc = fucntion (userInput){
+    if (userInput(typeof) == number){
+        return userInput*3
+    }else if (userInput(typeof) == number) {
+        return "ARRR!"
+    }else {
+        return "oops"
+    }
+
+    console.log(userInput);
+}
