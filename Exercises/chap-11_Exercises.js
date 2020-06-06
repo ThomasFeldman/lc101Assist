@@ -49,33 +49,57 @@ function checkFuel(level) {
       return "Full";
     }
   }
+  let normalFuel = function(fuelLevel){
+    let stealFuel = 0;
+    if(fuelLevel > 100000){
+      stealFuel = fuelLevel - 100001;
+    }else if(fuelLevel > 50000){
+      stealFuel = fuelLevel - 50001;
+    }else{
+      stealFuel = fuelLevel;
+    }
+    return stealFuel;
+  }
+  
+  let normalCargo = function(cargo, num){
+    let stealCargo = [];
+    let item1 = 0
+    let item2 = 0
+    if(cargo.includes('gold')){
+      item1 = cargo.splice(cargo.indexOf('gold'),1);
+      cargo.push("fool's gold");
+    }
+    if(cargo.includes('AE-35 unit')){
+      item2 = cargo.splice(cargo.indexOf('AE-35 unit'),1);
+      cargo.push("BS-69 unit");
+    }
+    stealCargo = stealCargo.concat(item1, item2);
+    
+    if(num == 0){
+        return cargo;
+    }
+    if(num == 1){
+        return stealCargo;
+    }
+  }
+  
   
   let fuelLevel = 200000;
-  let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'water', 'gold', 'AE-35 unit'];
+  let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
+  
+  let ourBooty = normalCargo(cargoHold, 1);
+  let ourFuel = normalFuel(fuelLevel);
+  
+  fuelLevel = fuelLevel - normalFuel(fuelLevel);
+  cargoHold = normalCargo(cargoHold, 0);
   
   console.log("Fuel level: " + checkFuel(fuelLevel));
   console.log("Hold status: " + holdStatus(cargoHold));
-
   
-let normalCargo = function(cargo, num){
-  let stealCargo = [];
-  let item1 = 0
-  let item2 = 0
-  if(cargo.includes('gold')){
-    item1 = cargo.splice(cargo.indexOf('gold'),1);
-    cargo.push("fool's gold");
-  }
-  if(cargo.includes('AE-35 unit')){
-    item2 = cargo.splice(cargo.indexOf('AE-35 unit'),1);
-    cargo.push("BS-69 unit");
-  }
-  stealCargo = stealCargo.concat(item1, item2);
   
-  if(num == 0){
-      return cargo;
-  }
-  if(num == 1){
-      return stealCargo;
-  }
-}
-console.log(normalCargo(cargoHold, 1));
+  
+  let irs = function(ourFuel, ourBooty){
+    return `Raided ${ourFuel} kg of fuel from the tanks, and stole ${ourBooty[0]} and ${ourBooty[1]} from the cargo hold.`
+  };
+  
+  console.log(irs(ourFuel, ourBooty));
