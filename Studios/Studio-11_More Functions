@@ -20,3 +20,22 @@ console.log(minVal(nums1));
 //Using one of the test arrays as the argument, call your function inside the console.log statement below.
 
 console.log(/* your code here */);
+
+
+
+function sortByMin(arr){
+  let sorted = [];
+  let pushThis;
+  let minIndex;
+
+  while(arr.length > sorted.length){
+    pushThis = minVal(arr);
+    minIndex = arr.indexOf(minVal(arr));
+    arr.splice(arr[minIndex], 1);
+    pushThis = minVal(arr);
+    sorted.push(pushThis);
+  }
+  return sorted;
+}
+
+console.log(sortByMin(nums1));
