@@ -1,27 +1,12 @@
 // Code your transform function here:
 function transform(object){
-    let newPointStructure = [];
+    let newScores = [];
     for(item in oldPointStructure){
         for(i=0; i<oldPointStructure[item].length; i++){
-            newPointStructure[oldPointStructure[item][i]] = Number(item);
+            newScores[oldPointStructure[item][i].toLowerCase()] = Number(item);
         }
     }
-    return newPointStructure;
-    // if(choice == 0){
-    //     let newPointStructure = [];
-    //     for(item in oldPointStructure){
-    //         for(i=0; i<oldPointStructure[item].length; i++){
-    //             newPointStructure[oldPointStructure[item][i]] = Number(item);
-    //         }
-    //     }
-    //     return newPointStructure;
-    // }else if(choice == 1){
-
-    // }else if(choice == 2){
-
-    // }else{
-    //     return 'somethin messed up!'
-    // }
+    return newScores;
 }
 
 // Code your initialPrompt function here:
@@ -54,11 +39,52 @@ const oldPointStructure = {
     10: ['Q', 'Z']
  };
  
+ let newPointStructure = transform(oldPointStructure);
  // Use the transform function to create the newPointStructure object here:
  
  
  // Create your scoringAlgorithms array here:
- 
+
+ // Simple Score: Define a function that takes a word as a parameter and returns a score. Each letter within the word is worth 1 point.
+function simpleScore(word){
+    let score = 0;
+    word = word.split('');
+    for(i=0; i<word.length; i++){
+        score += 1;
+    }
+    return score;
+}
+ // Bonus Vowels: Define a function that takes a word as a parameter and returns a score. Each vowel within the word is worth 3 points, and each consonant is worth 1 point.
+function bonusVowels(word){
+    let score = 0;
+    let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    word = word.toLowerCase().split('');
+
+    for(i=0; i<word.length; i++){
+        if(consonants.includes(word[i])){
+            score += 1;
+        }
+        if(vowels.includes(word[i])){
+            score += 3;
+        }
+    }
+
+    return score;
+}
+ // Scrabble Score: Define a function that takes a word and newPointStructure as parameters and returns a score. The function uses the data stored in newPointStructure to determine the point value for the word.
+function bonusVowels(word, newPointStructure){
+    let score = 0;
+    word = word.toLowerCase().split('');
+    for(items in newPointStructure){
+        for(i=0; i<word.length; i++){
+            if(item == word[i]){
+                score += newPointStructure[item][0];
+            }
+        }
+    }
+    return score;
+}
  
  // Call the runProgram function here:
  
