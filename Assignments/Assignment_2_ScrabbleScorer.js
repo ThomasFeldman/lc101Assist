@@ -88,9 +88,29 @@ function scrabbleScore(word, newPointStructure){
           }
         }
       }
-      
+
     return score;
 }
  
+
+// Create an object for each of the three scoring options. Each object should 
+// contain three keys: name, description, and scoreFunction.
+let simpleScoreObj = {
+    name: 'Simple Score';
+    description: 'Each letter is 1 point.';
+    scoreFunction: 'A function with a word parameter that returns a score.';
+};
+
+let bonusVowelsObj = {
+    name: 'Bonus Vowels';
+    description: 'Vowels are 3 pts, consonants are 1 pt.';
+    scoreFunction: 'A function with a word parameter that returns a score based on the number of vowels and consonants.';
+};
+
+let scrabbleScoreObj = {
+    name: 'Scrabble';
+    description: 'The traditional scoring algorithm.';
+    scoreFunction: 'Uses the newPointStructure object to determine the score for a given word.';
+};
  // Call the runProgram function here:
  
