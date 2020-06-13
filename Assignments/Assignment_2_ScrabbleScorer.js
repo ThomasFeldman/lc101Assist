@@ -21,6 +21,10 @@ function initialPrompt(){
     
     let input = require('readline-sync');
     let choice = input.question('Enter 0, 1, or 2: ');
+    while(choice<0 || choice>2 ){
+      console.log('Invalid choice!');
+      choice = input.question('Please Enter 0, 1, or 2: ');
+    }
 
     return choice;
 }
@@ -73,16 +77,18 @@ function bonusVowels(word){
     return score;
 }
  // Scrabble Score: Define a function that takes a word and newPointStructure as parameters and returns a score. The function uses the data stored in newPointStructure to determine the point value for the word.
-function bonusVowels(word, newPointStructure){
+function scrabbleScore(word, newPointStructure){
     let score = 0;
     word = word.toLowerCase().split('');
+
     for(items in newPointStructure){
         for(i=0; i<word.length; i++){
-            if(item == word[i]){
-                score += newPointStructure[item][0];
-            }
+          if(word[i]==items){
+            score += newPointStructure[items];
+          }
         }
-    }
+      }
+      
     return score;
 }
  
