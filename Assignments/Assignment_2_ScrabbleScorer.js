@@ -49,6 +49,8 @@ const oldPointStructure = {
  
  // Create your scoringAlgorithms array here:
 
+ let scoringAlgorithms = [simpleScoreObj, bonusVowelsObj, scrabbleScoreObj];
+
  // Simple Score: Define a function that takes a word as a parameter and returns a score. Each letter within the word is worth 1 point.
 function simpleScore(word){
     let score = 0;
@@ -112,5 +114,6 @@ let scrabbleScoreObj = {
     description: 'The traditional scoring algorithm.';
     scoreFunction: 'Uses the newPointStructure object to determine the score for a given word.';
 };
+
  // Call the runProgram function here:
  
