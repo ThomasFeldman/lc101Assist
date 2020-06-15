@@ -115,5 +115,18 @@ let scrabbleScoreObj = {
     scoreFunction: 'Uses the newPointStructure object to determine the score for a given word.';
 };
 
- // Call the runProgram function here:
  
+// Testing Scoring Algorithm Here
+// Scrabble scoring
+console.log("algorithm name: ", scoringAlgorithms[0].name);
+console.log("scoreFunction result: ", scoringAlgorithms[0].scoreFunction("JavaScript", newPointStructure));
+// Simple scoring
+console.log("algorithm name: ", scoringAlgorithms[1].name);
+console.log("scoreFunction result: ", scoringAlgorithms[1].scoreFunction("JavaScript"));
+// Bonus Vowel scoring
+console.log("algorithm name: ", scoringAlgorithms[2].name);
+console.log("scoreFunction result: ", scoringAlgorithms[2].scoreFunction("JavaScript"));
+
+// Call the runProgram function here:
+ 
+
