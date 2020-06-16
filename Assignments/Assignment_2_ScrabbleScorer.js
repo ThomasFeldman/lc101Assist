@@ -21,9 +21,21 @@ function initialPrompt(){
     
     let input = require('readline-sync');
     let choice = input.question('Enter 0, 1, or 2: ');
+    
+    choice = Number(choice);
+    while(isNan(choice)){
+      console.log('Invalid choice!');
+      choice = input.question('Please Enter 0, 1, or 2: ');
+    }
+    
     while(choice<0 || choice>2 ){
       console.log('Invalid choice!');
       choice = input.question('Please Enter 0, 1, or 2: ');
+
+      while(isNan(choice)){
+        console.log('Invalid choice!');
+        choice = input.question('Please Enter 0, 1, or 2: ');
+      }
     }
 
     return choice;
