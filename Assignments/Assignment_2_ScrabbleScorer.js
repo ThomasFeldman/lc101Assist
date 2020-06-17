@@ -23,7 +23,7 @@ function initialPrompt(){
     let choice = input.question('Enter 0, 1, or 2: ');
     
     choice = Number(choice);
-    while(isNan(choice)){
+    while(isNaN(choice)){
       console.log('Invalid choice!');
       choice = input.question('Please Enter 0, 1, or 2: ');
     }
@@ -32,7 +32,7 @@ function initialPrompt(){
       console.log('Invalid choice!');
       choice = input.question('Please Enter 0, 1, or 2: ');
 
-      while(isNan(choice)){
+      while(isNaN(choice)){
         console.log('Invalid choice!');
         choice = input.question('Please Enter 0, 1, or 2: ');
       }
@@ -59,9 +59,7 @@ const oldPointStructure = {
  // Use the transform function to create the newPointStructure object here:
  
  
- // Create your scoringAlgorithms array here:
 
- let scoringAlgorithms = [simpleScoreObj, bonusVowelsObj, scrabbleScoreObj];
 
  // Simple Score: Define a function that takes a word as a parameter and returns a score. Each letter within the word is worth 1 point.
 function simpleScore(word){
@@ -110,35 +108,38 @@ function scrabbleScore(word, newPointStructure){
 // Create an object for each of the three scoring options. Each object should 
 // contain three keys: name, description, and scoreFunction.
 let simpleScoreObj = {
-    name: 'Simple Score';
-    description: 'Each letter is 1 point.';
-    scoreFunction: 'A function with a word parameter that returns a score.';
+    name: 'Simple Score',
+    description: 'Each letter is 1 point.',
+    scoreFunction: simpleScore()
 };
 
 let bonusVowelsObj = {
-    name: 'Bonus Vowels';
-    description: 'Vowels are 3 pts, consonants are 1 pt.';
-    scoreFunction: 'A function with a word parameter that returns a score based on the number of vowels and consonants.';
-};
+    name: 'Bonus Vowels',
+    description: 'Vowels are 3 pts, consonants are 1 pt.',
+    scoreFunction: bonusVowels()
+    }
 
 let scrabbleScoreObj = {
-    name: 'Scrabble';
-    description: 'The traditional scoring algorithm.';
-    scoreFunction: 'Uses the newPointStructure object to determine the score for a given word.';
+    name: 'Scrabble',
+    description: 'The traditional scoring algorithm.',
+    scoreFunction: scrabbleScore()
 };
 
- 
-// Testing Scoring Algorithm Here
-// Scrabble scoring
-console.log("algorithm name: ", scoringAlgorithms[0].name);
-console.log("scoreFunction result: ", scoringAlgorithms[0].scoreFunction("JavaScript", newPointStructure));
-// Simple scoring
-console.log("algorithm name: ", scoringAlgorithms[1].name);
-console.log("scoreFunction result: ", scoringAlgorithms[1].scoreFunction("JavaScript"));
-// Bonus Vowel scoring
-console.log("algorithm name: ", scoringAlgorithms[2].name);
-console.log("scoreFunction result: ", scoringAlgorithms[2].scoreFunction("JavaScript"));
+ // Create your scoringAlgorithms array here:
 
+ let scoringAlgorithms = [simpleScoreObj, bonusVowelsObj, scrabbleScoreObj];
+
+ 
 // Call the runProgram function here:
- 
+function runProgram(){
+    let userScoring = initialPrompt();
+    let input = require('readline-sync');
+    let word = input.question("Enter a word to be scored, or 'Stop' to quit: ");
+    let userFunc = scoringAlgorithms[userScoring].scoreFunction();
 
+    while(word !== 'Stop'){
+        console.log(`Score for ${word}: ${userFunc((word))}`);
+    }
+ }
+
+runProgram();
