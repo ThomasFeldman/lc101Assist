@@ -1,3 +1,5 @@
+const input = require('readline-sync');
+
 // Code your transform function here:
 function transform(object){
     let newScores = [];
@@ -19,7 +21,6 @@ function initialPrompt(){
     console.log('1 - Simple Score: Each letter is worth 1 point.');
     console.log('2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.');
     
-    let input = require('readline-sync');
     let choice = input.question('Enter 0, 1, or 2: ');
     
     choice = Number(choice);
@@ -133,12 +134,23 @@ let scrabbleScoreObj = {
 // Call the runProgram function here:
 function runProgram(){
     let userScoring = initialPrompt();
-    let input = require('readline-sync');
-    let word = input.question("Enter a word to be scored, or 'Stop' to quit: ");
-    let userFunc = scoringAlgorithms[userScoring].scoreFunction();
 
-    while(word !== 'Stop'){
-        console.log(`Score for ${word}: ${userFunc((word))}`);
+    console.log(`Using algorithm: ${scoringAlgorithms[userScoring].name}`)
+
+    while(true){
+        let word = input.question("Enter a word to be scored, or 'Stop' to quit: ");
+        if(word === "Stop"){
+            return;
+        }
+
+        let userFunc = scoringAlgorithms[userScoring].scoreFunction();
+
+        if(userScoring == 0){
+            console.log(`Score for ${word}: ${userFunc(word, newPointStructure)}`);
+        }else{
+            console.log(`Score for ${word}: ${userFunc(word)}`);
+        }
+        console.log('');
     }
  }
 
