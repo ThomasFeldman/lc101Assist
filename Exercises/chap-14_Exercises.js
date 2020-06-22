@@ -11,4 +11,4 @@ jasmine.loadConfig({
 jasmine.execute();
 
 
-Reading Chap 17 for Mon
+Abbi and I skippin class today to hangout at Alex's before she leaves for Colorado
