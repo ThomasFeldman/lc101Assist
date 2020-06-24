@@ -11,4 +11,4 @@ jasmine.loadConfig({
 jasmine.execute();
 
 
-Abbi and I skippin class today to hangout at Alex's before she leaves for Colorado
+Mostly through chap 14 again, understanding the basics of unit testing.
