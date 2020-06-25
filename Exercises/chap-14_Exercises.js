@@ -11,4 +11,4 @@ jasmine.loadConfig({
 jasmine.execute();
 
 
-Mostly through chap 14 again, understanding the basics of unit testing.
+Learning about TDD
