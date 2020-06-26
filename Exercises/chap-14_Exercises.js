@@ -11,4 +11,4 @@ jasmine.loadConfig({
 jasmine.execute();
 
 
-Learning about TDD
+Third Assignment due soon, yikes
