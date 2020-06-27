@@ -18,5 +18,8 @@ describe("Command class", function() {
     commandType = this.commandType;
   });
 
+  it("constructor sets a value passed in as the 2nd argument", function(){
+    assert.strictValue(value, this.value);
+  });
 
 });
