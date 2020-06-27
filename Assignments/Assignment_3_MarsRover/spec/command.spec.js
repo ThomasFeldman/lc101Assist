@@ -14,4 +14,9 @@ describe("Command class", function() {
     );
   });
 
+  it("constructor sets command type", function(){
+    commandType = this.commandType;
+  });
+
+
 });
