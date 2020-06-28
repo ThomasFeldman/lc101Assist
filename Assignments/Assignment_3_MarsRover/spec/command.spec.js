@@ -19,7 +19,7 @@ describe("Command class", function() {
   });
 
   it("constructor sets a value passed in as the 2nd argument", function(){
-    assert.strictValue(value, this.value);
+    value = this.value;
   });
 
 });
