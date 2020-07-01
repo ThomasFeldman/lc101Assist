@@ -14,5 +14,8 @@ describe("Message class", function() {
     );  
   });
  
+  it("constructor sets name",function(){
+    name = description; 
+  });
 
 });
