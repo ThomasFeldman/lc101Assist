@@ -18,5 +18,8 @@ describe("Message class", function() {
     assert.strictEqual(new Message('name').description, 'name');
   });
 
-  //"throws error if a name is NOT passed into the constructor as the first parameter"
+  it("throws error if a name is NOT passed into the constructor as the first parameter",function(){
+    assert.strictEqual(new Message('name').name, 'name');
+  });
+
 });
