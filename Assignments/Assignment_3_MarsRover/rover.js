@@ -7,12 +7,17 @@ class Rover{
   
   
     receiveMessage(message){
-      console.log(message);
+        this.message = message.name;
+        this.commands = message.commands;
+        return [message, commands];
+      }
+      
     }
-  }
-  
-//   const myCommandObject = new Command('MY_COMMAND_TYPE', 'MY_VALUE')
-  
-//   myCommandObject.recieveMessage('Hi Mom!');
-  
-  module.exports = Rover;
+    
+    
+    
+    // const myCommandObject = new Command('MY_COMMAND_TYPE', 'MY_VALUE')
+    
+    // myCommandObject.recieveMessage('Hi Mom!');
+    
+    module.exports = Rover;
