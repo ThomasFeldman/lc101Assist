@@ -15,6 +15,8 @@ class Rover{
     }
     
     
+    // Going to talk to TA tomorrow and hopefully finish this damn project soon
+
     
     // const myCommandObject = new Command('MY_COMMAND_TYPE', 'MY_VALUE')
     
