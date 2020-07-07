@@ -36,3 +36,14 @@ describe("Rover class", function() {
     assert.strictEqual()
   });
 });
+
+
+
+
+
+
+
+//How the commands should work
+// //MOVE	Number representing the position the rover should move to.	position	{completed: true}
+// STATUS_CHECK	No values sent with this command.	No updates	{completed: true, roverStatus: {mode: 'NORMAL', generatorWatts: 110, position: 87382098}} Values for mode, generatorWatts, position will depend on current state of rover.
+// MODE_CHANGE	String representing rover mode (see modes)	mode	{completed: true}
