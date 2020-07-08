@@ -42,7 +42,10 @@ describe("Rover class", function() {
 
 
 
-
+// Questions to ask Monique
+    //How do I set up Rover class to return the recieve Message properly
+    //Where do I set up the Command values at
+    //Find out office hours
 //How the commands should work
 // //MOVE	Number representing the position the rover should move to.	position	{completed: true}
 // STATUS_CHECK	No values sent with this command.	No updates	{completed: true, roverStatus: {mode: 'NORMAL', generatorWatts: 110, position: 87382098}} Values for mode, generatorWatts, position will depend on current state of rover.
