@@ -15,11 +15,11 @@ describe("Command class", function() {
   });
 
   it("constructor sets command type", function(){
-    commandType = this.commandType;
+    assert.strictEqual(new Command('MOVE').commandType, 'MOVE');
   });
 
   it("constructor sets a value passed in as the 2nd argument", function(){
-    value = this.value;
+    assert.strictEqual(new Message('MOVE', 3).value, 3);
   });
 
 });
