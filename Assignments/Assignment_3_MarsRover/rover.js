@@ -6,22 +6,28 @@ class Rover{
   }
 
   receiveMessage(message){
-    this.message = message.name;
+    // this.message = message.name;
 
-    this.results = results.concat(message.commands);
-
-    if(results.contains('MOVE')){
-      this.position = results[1];
-      return '{completed: true}';
-    }else if(results.contains('STATUS_CHECK')){
-      let rover = new Rover(message.position);
-      return `{completed: true, roverStatus: ${rover}}`;
-    }else if(results.contains('MODE_CHANGE')){
-      this.mode = results[0]
-      return '{completed: true}';
-    }else{
-
+    let results = {
+      name: message.name;
+      response: message.commands;
     }
+
+    return results;
+    // this.results = results.concat(message.commands);
+
+    // if(results.contains('MOVE')){
+    //   this.position = results[1];
+    //   return '{completed: true}';
+    // }else if(results.contains('STATUS_CHECK')){
+    //   let rover = new Rover(message.position);
+    //   return `{completed: true, roverStatus: ${rover}}`;
+    // }else if(results.contains('MODE_CHANGE')){
+    //   this.mode = results[0]
+    //   return '{completed: true}';
+    // }else{
+
+    // }
   }
   
 }
