@@ -11,6 +11,28 @@ class Rover{
     let results = {
       name: message.name;
       response: message.commands;
+
+      receiveMessage(message){
+        let response = {
+          name: message.name,
+          results: message.commands
+    
+          if(results.contains('MOVE')){
+            this.position = results[1];
+            results: '{completed: true}';
+          }else if(results.contains('STATUS_CHECK')){
+            let rover = new Rover(message.position);
+            results: `{completed: true, roverStatus: ${rover}}`;
+          }else if(results.contains('MODE_CHANGE')){
+            this.mode = results[0]
+            results: '{completed: true}';
+          }
+    
+        console.log(message);
+    
+        
+        return response;
+
     }
 
     return results;
