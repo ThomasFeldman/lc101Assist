@@ -15,7 +15,7 @@ describe("Message class", function() {
   });
  
   it("constructor sets name",function(){
-    assert.strictEqual(new Message('name').description, 'name');
+    assert.strictEqual(new Message('name').name, 'name');
   });
 
   it("throws error if a name is NOT passed into the constructor as the first parameter",function(){
