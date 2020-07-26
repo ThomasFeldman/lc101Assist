@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Message = require('../message.js');
+const Command = require('../command.js');
 
 describe("Message class", function() {
 
@@ -13,13 +14,14 @@ describe("Message class", function() {
       }
     );  
   });
- 
+
   it("constructor sets name",function(){
-    assert.strictEqual(new Message('name').name, 'name');
+    assert.strictEqual(new Message('Abbi').name, 'Abbi');
   });
 
-  it("throws error if a name is NOT passed into the constructor as the first parameter",function(){
-    assert.strictEqual(new Message('name').name, 'name');
+  it("contains a commands array passed into the constructor as 2nd argument",function(){
+    let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
+    assert.strictEqual(new Message('Abbi', commands).commands, commands);
   });
 
 });

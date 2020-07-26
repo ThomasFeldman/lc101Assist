@@ -11,15 +11,15 @@ describe("Command class", function() {
       {
         message: 'Command type required.'
       }
-    );
+    );  
   });
 
   it("constructor sets command type", function(){
-    assert.strictEqual(new Command('MOVE').commandType, 'MOVE');
+    assert.strictEqual(new Command('MOVE').commandType, 'MOVE' );
   });
 
   it("constructor sets a value passed in as the 2nd argument", function(){
-    assert.strictEqual(new Message('MOVE', 3).value, 3);
+    assert.strictEqual(new Command('MOVE', 3).value, 3);
   });
-
+  
 });
