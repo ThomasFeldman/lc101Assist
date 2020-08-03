@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
  
           let num = Math.floor(Math.random() * json.length)
           let div = `
+            <h2>Mission Destination</h2>
              <ol>
                 <li>Name: ${json[num].name}</li>
                 <li>Diameter: ${json[num].diameter}</li>
@@ -63,9 +64,9 @@ window.addEventListener("load", function () {
        }
  
        if (fuelLevel.value < 10000) {
-          pilotStatus.innerHTML = `${pilotName.value} ready`;
-          copilotStatus.innerHTML = `${copilotName.value} ready`;
-          fuelStatus.innerHTML = "Inadequate fuel level present";
+          pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
+          copilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready for launch`;
+          fuelStatus.innerHTML = "Is too low for launch";
  
           if (cargoMass.value > 10000) {
              cargoStatus.innerHTML = "Cargo mass too high";
