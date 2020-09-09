@@ -1,5 +1,8 @@
 package org.launchcode.techjobs_oo;
 
+import org.junit.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class JobTest {
