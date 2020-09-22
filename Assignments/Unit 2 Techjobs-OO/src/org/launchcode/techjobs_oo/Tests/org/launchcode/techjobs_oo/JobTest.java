@@ -1,9 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import org.junit.*;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 
 public class JobTest {
 
@@ -13,7 +9,8 @@ public class JobTest {
         Job job2 = new Job();
         assertEquals((job1.getId() != job2.getId()), true);
     }
-    @Test
-    public void testEquals() {
-    }
+//    @Test
+//    public void testEquals() {
+//
+//    }
 }
