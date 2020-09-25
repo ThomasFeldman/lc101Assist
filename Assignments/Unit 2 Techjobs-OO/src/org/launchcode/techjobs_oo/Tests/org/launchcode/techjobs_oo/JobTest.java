@@ -10,10 +10,16 @@ import static org.junit.Assert.assertTrue;
 public class JobTest {
 
     Job testJob;
+    Job testEmptyJob;
 
     @Before
     public void createJobObject(){
         testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    }
+
+    @Before
+    public void createEmptyJobObject(){
+        testEmptyJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     }
 
     @Test
@@ -43,4 +49,29 @@ public class JobTest {
     public void toStringLine(){
         assertTrue(testJob.toString().startsWith("\n") && testJob.toString().endsWith("\n"));
     }
+
+    @Test
+    public void toStringFormat(){
+        assertEquals(testJob.toString(), "\n"+
+                "ID: " + testJob.getId() + "\n" +
+                "Name: Product tester\n"+
+                "Employer: ACME\n"+
+                "Location: Desert\n"+
+                "PositionType: Quality control\n"+
+                "Core Competency: Persistence\n"
+        );
+    }
+
+    @Test
+    public void toStringEmpty(){
+        assertEquals(testEmptyJob.toString(), "\n"+
+                "ID: " + testEmptyJob.getId() + "\n" +
+                "Name: Data not available\n"+
+                "Employer: Data not available\n"+
+                "Location: Data not available\n"+
+                "PositionType: Data not available\n"+
+                "Core Competency: Data not available\n");
+    }
+
+
 }
