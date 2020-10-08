@@ -8,4 +8,4 @@ let deckMops = function(arr){
     return arr;
 }
 
-cargoHold.map();
+//Goal to get the gold out of cargohold
