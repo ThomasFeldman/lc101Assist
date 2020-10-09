@@ -13,13 +13,19 @@ function transform(object){
 
 // Code your initialPrompt function here:
 function initialPrompt(){
-    console.log('Welcome to the Scrabble scor calculator!');
-    console.log('');
-    console.log('Which scoring algorithm would you like to use?');
-    console.log('');
-    console.log('0 - Scrabble: The traditional scoring algorithm.');
-    console.log('1 - Simple Score: Each letter is worth 1 point.');
-    console.log('2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.');
+    console.log(`Welcome to the Scrabble score calculator!\n\n
+                Which scoring algorithm would you like to use?\n\n
+                0 - Scrabble: The traditional scoring algorithm.\n
+                1 - Simple Score: Each letter is worth 1 point.\n
+                2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
+            `);
+    // console.log('Welcome to the Scrabble scor calculator!');
+    // console.log('');
+    // console.log('Which scoring algorithm would you like to use?');
+    // console.log('');
+    // console.log('0 - Scrabble: The traditional scoring algorithm.');
+    // console.log('1 - Simple Score: Each letter is worth 1 point.');
+    // console.log('2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.');
     
     let choice = input.question('Enter 0, 1, or 2: ');
     
