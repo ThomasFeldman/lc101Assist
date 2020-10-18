@@ -11,6 +11,8 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
+
+    //Need to find out how to stop Tomcat from hogging port 8080, or change the port.
     <table class="centeredTable">
         <tr>
             <td th:each="category : ${tableChoices}">
