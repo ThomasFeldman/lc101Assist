@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
-</head>
-<body>
 
-<div th:replace="fragments :: page-header"></div>
+    <head th:replace="fragments :: head"></head>
 
-<div class="container body-content">
+    <body>
 
-    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+        <div th:replace="fragments :: page-header"></div>
 
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
+        <div class="container body-content">
 
-    //Need to find out how to stop Tomcat from hogging port 8080, or change the port.
-    <table class="centeredTable">
-        <tr>
-            <td th:each="category : ${tableChoices}">
-                <ul>
-                    <li th:each="employer : ${}"></li>
-                    <li th:each="item : ${category.value}">
-                        <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+            <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
+            <!-- TODO #1 - Use a loop to display job results in a table. -->
+            <table>
+                <tr th:each="job : ${jobs}">
+                    <td class="job-listing">
+                        <ul th:text="'ID: ' + ${job.id}"></ul>
+                        <ul th:text="'Name: ' + ${job.name}"></ul>
+                        <ul th:text="'Employer: ' + ${job.employer}"></ul>
+                        <ul th:text="'Location: ' + ${job.location}"></ul>
+                        <ul th:text="'Position Type: ' + ${job.positionType}"></ul>
+                        <ul th:text="'Skill: ' + ${job.coreCompetency}"></ul>
 
-</div>
+                    </td>
+                </tr>
+            </table>
 
-</body>
+        </div>
+
+    </body>
 </html>
