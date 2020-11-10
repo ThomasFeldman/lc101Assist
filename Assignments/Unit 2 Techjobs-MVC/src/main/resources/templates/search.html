@@ -38,6 +38,39 @@
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
+    <table class="job-listing">
+        <th:block th:each="job : ${results}">
+            <tr>
+                <table class="jobs-listing">
+                    <tr>
+                        <td>ID</td><td th:text="${job.id}"></td>
+                    </tr>
+                    <tr>
+                        <td>Name</td><td th:text="${job.name}"></td>
+                    </tr>
+                    <tr>
+                        <td>Employer</td>
+                        <td>
+                            <!--                            <a th:href="${job.employer.value}" th:text="${job.employer.value}"></a>-->
+                            <a th:href="@{/search/results(searchType=employer,searchTerm=${job.employer.value})}" th:text="${job.employer.value}"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a th:href="@{/search/results(searchType=location,searchTerm=${job.location.value})}" th:text="${job.location.value}"></td>
+                    </tr>
+                    <tr>
+                        <td><a th:href="@{/search/results(searchType=positionType,searchTerm=${job.positionType.value})}" th:text="${job.positionType.value}"></td>
+                    </tr>
+                    <tr>
+                        <td><a th:href="@{/search/results(searchType=coreCompetency,searchTerm=${job.coreCompetency.value})}" th:text="${job.coreCompetency.value}"></td>
+                    </tr>
+                </table>
+                <br/>
+                <br/>
+            </tr>
+        </th:block>
+    </table>
+
 </div>
 
 </body>
